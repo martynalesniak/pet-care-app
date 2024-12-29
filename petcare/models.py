@@ -36,5 +36,10 @@ class Post(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='posts')
 
 class User(AbstractUser):
+    username = models.CharField(max_length=100,unique=True)
+    last_name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100) 
+    email = models.EmailField(max_length=100,unique=True)
+    is_active = models.BooleanField(default=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     phone_number = models.CharField(max_length=15, blank=True, null=True)
