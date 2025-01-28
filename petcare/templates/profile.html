@@ -10,6 +10,15 @@
                   <img class="pet-image-profile" src="{{ pet.image.url }}" alt="{{ pet.name }}">
                   <h3 class="pet-name-profile">{{ pet.name }}</h3>
               </a>
+              
+              <!-- Dodajemy tylko przycisk, jeśli pet.id istnieje -->
+              {% if pet.id %}
+                  <div class="add-post-container">
+                      <a href="{% url 'add_post' pet.id %}" class="add-post-btn">Add Post</a>
+                  </div>
+              {% else %}
+                  <p>No pet ID available</p>  <!-- Tu możesz umieścić komunikat, jeśli pet.id nie jest dostępny -->
+              {% endif %}
           </div>
       {% endfor %}
       
