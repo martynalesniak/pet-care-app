@@ -1,0 +1,767 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F2F2EB;
+}
+
+/* 4869E1, FFC0A1, BCD7E3, F2F2EB*/
+header {
+    background-color: #4869E1;
+    color: #fff;
+    padding: 1em 0;
+}
+
+/* Górna sekcja na logowanie */
+.header-top {
+    text-align: right;
+    padding: 0 20px;
+}
+
+.header-top a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9em;
+}
+
+.header-top a:hover {
+    text-decoration: underline;
+}
+
+/* Sekcja z tytułem i menu */
+.header-content {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.header-title {
+    font-size: 3em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.header-menu {
+    margin-top: 15px;
+}
+
+.header-menu a {
+    color: #FFC0A1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+.header-menu a:hover {
+    text-decoration: underline;
+}
+
+
+.logout-link {
+    color: #FFD700;
+    font-weight: bold;
+}
+.container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;  
+    padding: 20px;
+    margin: 0 auto;  
+    max-width: 1200px;
+}
+
+.post {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    background-color: #FFC0A1;
+}
+
+.post:hover {
+    transform: translateY(-10px);
+}
+
+.post a {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.post a:hover {
+    color: #007bff;
+}
+
+.post p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.pet-image {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover;  
+    object-position: top center; 
+    border-radius: 8px; 
+    margin-bottom: 16px;
+}
+
+.pet-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.pet-container:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pet-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.pet-container h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.pet-container p {
+    font-size: 1em;
+    color: #777;
+}
+
+.pet-container a {
+    color: #4869E1;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #FFC0A1;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.register-form {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+
+/* Nagłówek formularza */
+.register-form h2 {
+    font-size: 2em;
+    color: #4869E1;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Tabela formularza */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.form-table td {
+    padding: 6px;
+    text-align: left;
+}
+
+.form-table label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Pola wejściowe */
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+
+.register-form input:focus {
+    border-color: #4869E1;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(72, 105, 225, 0.5);
+}
+
+/* Przycisk rejestracji */
+.register-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4869E1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efekt przycisku na hover */
+.register-form button:hover {
+    background-color: #3759a4;
+}
+
+
+.register-form p {
+    font-size: 1em;
+    color: #333;
+}
+
+.register-form a {
+    color: #4869E1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-form a:hover {
+    color: #3759a4;
+}
+
+
+/* Login Form */
+.login-form {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+
+/* Nagłówek formularza */
+.login-form h2 {
+    font-size: 2em;
+    color: #4869E1;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Tabela formularza */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.form-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.form-table label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #4869E1;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(72, 105, 225, 0.5);
+}
+
+/* Przycisk logowania */
+.login-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4869E1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efekt przycisku na hover */
+.login-form button:hover {
+    background-color: #3759a4;
+}
+
+.login-form p {
+    font-size: 1em;
+    color: #333;
+}
+
+.login-form a {
+    color: #4869E1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-form a:hover {
+    color: #3759a4;
+}
+
+.account-activated-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+
+
+.account-activated-container h2 {
+    font-size: 2.5em;
+    color: #4869E1;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+
+.account-activated-container .btn {
+    padding: 15px 30px;
+    background-color: #4869E1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+
+.email-confirmation-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+
+
+.email-confirmation-container h2 {
+    font-size: 2.5em;
+    color: #4869E1;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+
+.email-confirmation-container .btn {
+    padding: 15px 30px;
+    background-color: #4869E1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+/* Wspólny kontener */
+.password-reset-container,
+.password-reset-done-container,
+.password-reset-complete-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+
+
+.password-reset-container h2,
+.password-reset-done-container h2,
+.password-reset-complete-container h2 {
+    font-size: 2em;
+    color: #4869E1;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Treść stron */
+.password-reset-container p,
+.password-reset-done-container p,
+.password-reset-complete-container p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Przyciski */
+.password-reset-container button,
+.password-reset-done-container .btn,
+.password-reset-complete-container .btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #4869E1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.password-reset-container button:hover,
+.password-reset-done-container .btn:hover,
+.password-reset-complete-container .btn:hover {
+    background-color: #3759a4;
+}
+
+.password-reset-container form {
+    width: 100%;
+}
+
+/* Kontener formularza dodawania zwierzęcia */
+.add-pet-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F9FA;
+    text-align: center;
+}
+
+/* Nagłówek formularza */
+.add-pet-container h2 {
+    font-size: 2em;
+    color: #4869E1;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Tabela formularza */
+.pet-form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: fixed;
+}
+
+.pet-form-table td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Etykiety */
+.pet-form-table label {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Pola formularza */
+.add-pet-container input,
+.add-pet-container select,
+.add-pet-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+
+/* Efekt focus */
+.add-pet-container input:focus,
+.add-pet-container select:focus,
+.add-pet-container textarea:focus {
+    border-color: #4869E1;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(72, 105, 225, 0.5);
+}
+
+/* Przycisk dodawania zwierzęcia */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #4869E1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efekt hover przycisku */
+.btn-submit:hover {
+    background-color: #3759a4;
+}
+/* Stylizacja formularza */
+.add-pet-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.add-pet-container table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.add-pet-container td {
+    padding: 10px;
+}
+
+.add-pet-container td label {
+    font-weight: bold;
+}
+
+.add-pet-container button {
+    padding: 15px;
+    background-color: #4869E1;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.add-pet-container button:hover {
+    background-color: #3759a4;
+}
+
+.add-pet-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.pets-section-profile {
+    padding: 20px;
+    background-color: #F2F2EB;
+}
+
+.section-title-profile {
+    font-size: 2em;
+    text-align: center;
+    color: #4869E1;
+    margin-bottom: 20px;
+}
+
+.pets-list-profile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.pet-container-profile {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pet-container-profile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pet-image-profile {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.pet-name-profile {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #4869E1;
+    text-decoration: none; /* Ensure no underline */
+}
+
+.pet-container-profile a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+.pet-info-profile {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Dodatkowy styl dla kontenera 'Add a New Pet' */
+.add-new-pet-container {
+    background-color: #FFC0A1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-new-pet-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-new-pet-container .pet-image-profile {
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: 2px dashed #4869E1;
+    object-fit: cover;
+    opacity: 0.7;
+}
+.pet-detail-container {
+    padding: 20px;
+    background-color: #F2F2EB;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.pet-detail-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.pet-detail-image-container {
+    flex: 1 1 45%;  /* Takes 45% of the available width */
+    text-align: center;
+}
+
+.pet-detail-image {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;      /* Fixed max width for image */
+    max-height: 600px;     /* Fixed max height for image */
+    object-fit: cover;     /* Ensures the image covers the container */
+    object-position: top center; /* Aligns the image from the top center */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-detail-info-container {
+    flex: 1 1 50%;  /* Takes 50% of the available width */
+    padding: 0 20px;
+}
+
+.pet-detail-title {
+    font-size: 2.5em;
+    color: #4869E1;
+    margin-bottom: 20px;
+}
+
+.pet-detail-description {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.pet-detail-active-posts h2 {
+    font-size: 2em;
+    color: #4869E1;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pet-detail-post-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pet-detail-apply-form {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pet-detail-apply-button {
+    background-color: #4869E1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pet-detail-apply-button:hover {
+    background-color: #3650a7;
+}
+
+a {
+    color: #4869E1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

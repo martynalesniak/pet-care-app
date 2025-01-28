@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Are you sure you want to delete this post?</h2>
+    <p>{{ post.pet.name }}</p>
+    
+    <!-- Formularz do potwierdzenia usunięcia -->
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" name="confirm_delete">Yes, Delete</button>
+    </form>
+    
+    <a href="{% url 'profile' %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Email Confirmation Sent - PawPal{% endblock %}
+
+{% block content %}
+    <div class="email-confirmation-container">
+        <h2>A confirmation email has been sent to your email address.</h2>
+        <p>Please check your inbox and confirm your email address to activate your account.</p>
+        <p>You can <a href="{% url 'login' %}" class="btn">login here</a> after activation.</p>
+    </div>
+{% endblock %}

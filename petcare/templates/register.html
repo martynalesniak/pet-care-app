@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up - PawPal{% endblock %}
+
+{% block content %}
+    <div class="register-form">
+        <h2>Create an Account</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            <table class="form-table">
+                <tr>
+                    <td><label for="id_username">Username:</label></td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td><label for="id_first_name">First Name:</label></td>
+                    <td>{{ form.first_name }}</td>
+                </tr>
+                <tr>
+                    <td><label for="id_last_name">Last Name:</label></td>
+                    <td>{{ form.last_name }}</td>
+                </tr>
+                <tr>
+                    <td><label for="id_email">Email:</label></td>
+                    <td>{{ form.email }}</td>
+                </tr>
+                <tr>
+                    <td><label for="id_phone">Phone:</label></td>
+                    <td>{{ form.phone_number }}</td>
+                </tr>
+                <tr>
+                    <td><label for="id_password1">Password:</label></td>
+                    <td>{{ form.password1 }}</td>
+                </tr>
+                <tr>
+                    <td><label for="id_password2">Confirm Password:</label></td>
+                    <td>{{ form.password2 }}</td>
+                </tr>
+            </table>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p>Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
+    </div>
+{% endblock %}

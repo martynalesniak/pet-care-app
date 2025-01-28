@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="pets-section-profile">
+  <h2 class="section-title-profile">Your Pets</h2>
+  <div class="pets-list-profile">
+      {% for pet in pets %}
+          <div class="pet-container-profile">
+              <a href="{% url 'pet_detail' pet.id %}">
+                  <img class="pet-image-profile" src="{{ pet.image.url }}" alt="{{ pet.name }}">
+                  <h3 class="pet-name-profile">{{ pet.name }}</h3>
+              </a>
+          </div>
+      {% endfor %}
+      
+      <div class="pet-container-profile add-new-pet-container">
+          <a href="{% url 'add_pet' %}">
+            <img class="pet-image-profile" src="{% static 'placeholder.jpeg' %}" alt="Add a New Pet">
+            <h3 class="pet-name-profile">Add a New Pet</h3>
+          </a>
+      </div>
+  </div>
+</div>
+
+<div class="posts-section">
+    <h2 class="section-title">My Posts</h2>
+    <ul class="posts-list">
+        {% for post in posts %}
+            <li class="post-container">
+                <a href="{% url 'pet_detail' post.pet.id %}" class="post-pet-name">{{ post.pet.name }}</a>
+                <p class="post-description">{{ post.care_description }}</p>
+                <p class="post-dates">{{ post.start_date }} - {{ post.end_date }}</p>
+                {% if post.user == request.user %}
+                    <div class="post-actions">
+                        <a href="{% url 'edit_post' post.id %}" class="post-action-btn">Edit</a>
+                        <a href="#" class="post-action-btn delete-btn" data-post-id="{{ post.id }}">Delete</a>
+                    </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div id="confirm-delete-modal" style="display:none;">
+    <h3>Are you sure you want to delete this post?</h3>
+    <form method="POST" id="delete-form">
+        {% csrf_token %}
+        <button type="submit" id="confirm-delete">Yes, Delete</button>
+    </form>
+    <button id="cancel-delete">Cancel</button>
+</div>
+{% endblock %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.delete-btn').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            var postId = this.getAttribute('data-post-id');
+            var modal = document.getElementById('confirm-delete-modal');
+            document.getElementById('delete-form').action = '/post/' + postId + '/delete/'; // Ustawienie akcji formularza na URL usuwania
+            modal.style.display = 'block'; 
+        });
+    });
+
+    document.getElementById('cancel-delete').addEventListener('click', function() {
+        document.getElementById('confirm-delete-modal').style.display = 'none'; 
+    });
+
+    document.getElementById('confirm-delete').addEventListener('click', function(event) {
+    document.getElementById('delete-form').submit();
+    });
+});
+
+</script>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Available Posts</h1>
+    <div class="posts-container">
+        {% for post in posts %}
+        <div class="post">
+            <a href="{% url 'pet_detail' post.pet.id %}">{{ post.pet.name }}
+                {% if post.pet.image %}
+                    <img class="pet-image" src="{{ post.pet.image.url }}" alt="{{ post.pet.name }}">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+            </a>
+            <p>{{ post.care_description }}</p>
+            <p>{{ post.start_date }} - {{ post.end_date }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

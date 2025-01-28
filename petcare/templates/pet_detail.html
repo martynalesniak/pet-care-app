@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="pet-detail-container">
+    <div class="pet-detail-content">
+        <div class="pet-detail-image-container">
+            <img src="{{ pet.image.url }}" alt="Image of {{ pet.name }}" class="pet-detail-image">
+        </div>
+
+        <div class="pet-detail-info-container">
+            <h1 class="pet-detail-title">{{ pet.name }} - {{ pet.breed }}</h1>
+
+            <div class="pet-detail-description">
+                <p>{{ pet.description }}</p>
+                <p><strong>Age:</strong> {{ pet.age }} years</p>
+                <p><strong>Weight:</strong> {{ pet.weight }} kg</p>
+                <p><strong>Energy Level:</strong> {{ pet.energy_level }}</p>
+                <p><strong>Sex:</strong> {{ pet.sex }}</p>
+                <p><strong>Vaccinated:</strong> {% if pet.is_vaccinated %}Yes{% else %}No{% endif %}</p>
+                <p><strong>Location:</strong> {{ pet.location }}</p>
+                <p><strong>Characteristics:</strong> {{ pet.characteristics.all|join:", " }}</p>
+            </div>
+
+            <section class="pet-detail-active-posts">
+                <h2>Active Posts</h2>
+                <ul>
+                    {% for post in posts %}
+                        <li class="pet-detail-post-item">
+                            <p>{{ post.care_description }}</p>
+                            <p><strong>Start:</strong> {{ post.start_date }} | <strong>End:</strong> {{ post.end_date }}</p>
+
+                            {% if request.user.is_authenticated %}
+                                <form method="post" action="{% url 'apply_to_post' post.id %}" class="pet-detail-apply-form">
+                                    {% csrf_token %}
+                                    <button type="submit" class="pet-detail-apply-button">Apply</button>
+                                </form>
+                            {% else %}
+                                <p>This action is only available to registered users. <a href="{% url 'login' %}">Log in</a> or <a href="{% url 'register' %}">sign up</a>.</p>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

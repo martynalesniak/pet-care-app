@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a New Pet{% endblock %}
+
+{% block content %}
+  <div class="add-pet-container">
+    <h2>Add a New Pet</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <table class="pet-form-table">
+        <tr>
+          <td><label for="id_name">Name:</label></td>
+          <td>{{ form.name }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_age">Age:</label></td>
+          <td>{{ form.age }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_breed">Breed:</label></td>
+          <td>{{ form.breed }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_height">Height:</label></td>
+          <td>{{ form.height }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_weight">Weight:</label></td>
+          <td>{{ form.weight }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_sex">Sex:</label></td>
+          <td>{{ form.sex }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_description">Description:</label></td>
+          <td>{{ form.description }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_characteristics">Characteristics:</label></td>
+          <td>
+            {% for checkbox in form.characteristics %}
+              <div>
+                <label>{{ checkbox }}</label> {{ checkbox.choice_label }}
+              </div>
+            {% endfor %}
+          </td>
+        </tr>
+        <tr>
+          <td><label for="id_energy_level">Energy Level:</label></td>
+          <td>{{ form.energy_level }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_is_vaccinated">Vaccinated:</label></td>
+          <td>{{ form.is_vaccinated }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_image">Image:</label></td>
+          <td>{{ form.image }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_location">Location:</label></td>
+          <td>{{ form.location }}</td>
+        </tr>
+      </table>
+      <button type="submit" class="btn-submit">Add Pet</button>
+    </form>
+  </div>
+{% endblock %}
+

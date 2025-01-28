@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Account Activated - PawPal{% endblock %}
+
+{% block content %}
+    <div class="account-activated-container">
+        <h2>Your account has been successfully activated!</h2>
+        <p>You can now log in using your credentials.</p>
+        <a href="{% url 'login' %}" class="btn">Login</a>
+    </div>
+{% endblock %}
